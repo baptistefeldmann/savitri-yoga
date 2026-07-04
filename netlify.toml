@@ -1,0 +1,27 @@
+# =========================================================
+# Configuration de déploiement Netlify
+# Site 100 % statique : aucune étape de build.
+# =========================================================
+
+[build]
+  # Dossier publié = racine du dépôt (tout est déjà prêt à servir)
+  publish = "."
+  # Pas de commande de build (ni framework, ni dépendances)
+  command = ""
+
+# En-têtes de sécurité de base appliqués à toutes les pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Cache long uniquement pour les ressources qui changent rarement
+# (images, favicon). Volontairement PAS de cache agressif sur js/ et css/
+# pour que les mises à jour de data/contenu.js soient visibles immédiatement.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

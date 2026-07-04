@@ -1,0 +1,15 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+*.swp
+*~
+
+# Dossiers de build/dépendances (non utilisés ici, par précaution)
+node_modules/
+dist/
+
+# Local Netlify CLI
+.netlify/

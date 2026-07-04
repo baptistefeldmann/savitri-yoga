@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Savitri Yoga Saint-Malo — cours de Hatha Yoga (méthode Sivananda), Yoga sur chaise, Yoga Nidra, Yogathérapie et massages avec Corinne Montigny. Cours près de Saint-Malo depuis 2013." />
+  <meta name="theme-color" content="#6b7d4f" />
+  <title>Savitri Yoga · Saint-Malo — Hatha Yoga, Nidra, Yogathérapie & Massages</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Savitri Yoga Saint-Malo" />
+  <meta property="og:description" content="Cours de yoga, yoga sur chaise, yoga nidra, yogathérapie et massages avec Corinne Montigny, près de Saint-Malo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Skip link (accessibilité) -->
+  <a href="#accueil" class="skip-link">Aller au contenu</a>
+
+  <!-- Barre de progression de lecture -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ HEADER / NAVIGATION ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#accueil" class="brand" aria-label="Savitri Yoga Saint-Malo, accueil">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="34" height="34" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.35"/>
+            <path d="M20 6c4 6 4 12 0 28-4-16-4-22 0-28z" fill="currentColor" opacity="0.85"/>
+            <path d="M20 12c7 3 11 8 12 16-8-2-12-7-12-16z" fill="currentColor" opacity="0.55"/>
+            <path d="M20 12C13 15 9 20 8 28c8-2 12-7 12-16z" fill="currentColor" opacity="0.55"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>Savitri Yoga</strong>
+          <em>Saint-Malo</em>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#apropos">Le Yoga</a></li>
+          <li><a href="#cours">Les cours</a></li>
+          <li><a href="#services">Pratiques</a></li>
+          <li><a href="#respiration">Respiration</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Basculer le mode sombre" title="Mode clair / sombre">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.6" y1="4.6" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.4" y2="4.6"/></g></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="accueil">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-blob hero-blob--1"></div>
+        <div class="hero-blob hero-blob--2"></div>
+        <div class="hero-blob hero-blob--3"></div>
+      </div>
+      <div class="container hero-inner">
+        <p class="hero-eyebrow reveal">Studio de yoga · depuis 2013</p>
+        <h1 class="hero-title reveal">Respirez, ancrez-vous,<br /><span>revenez à l'essentiel.</span></h1>
+        <p class="hero-lead reveal">
+          Cours de Hatha Yoga inspirés de la méthode <strong>Sivananda</strong>, yoga sur chaise,
+          yoga nidra, yogathérapie et massages, avec <strong>Corinne Montigny</strong>,
+          au cœur de la région de Saint-Malo.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#cours" class="btn btn-primary">Découvrir les cours</a>
+          <a href="#contact" class="btn btn-ghost">Réserver un essai</a>
+        </div>
+        <dl class="hero-stats reveal">
+          <div><dt>2013</dt><dd>Studio fondé</dd></div>
+          <div><dt>4</dt><dd>Lieux de cours</dd></div>
+          <div><dt>Sivananda</dt><dd>Tradition enseignée</dd></div>
+        </dl>
+      </div>
+      <a href="#apropos" class="scroll-hint" aria-label="Défiler vers le bas">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ BANDEAU RENTRÉE ============ -->
+    <div class="notice-bar reveal">
+      <div class="container">
+        <span class="notice-tag">Rentrée</span>
+        Reprise des cours collectifs et individuels à partir du <strong>lundi 15 septembre 2025</strong>.
+        Ateliers, semaines de jeûne et retraites sur demande.
+        <a href="#contact">Nous écrire →</a>
+      </div>
+    </div>
+
+    <!-- ============ À PROPOS / LE YOGA ============ -->
+    <section id="apropos" class="section">
+      <div class="container grid-2">
+        <div class="reveal">
+          <p class="section-eyebrow">Le Yoga</p>
+          <h2 class="section-title">Unir le corps, le mental et l'âme</h2>
+          <p>
+            Le mot <em>yoga</em> vient du sanskrit <strong>« Yuj »</strong>, qui signifie
+            <strong>unir, relier</strong>. La pratique s'adresse aux dimensions physique,
+            mentale et spirituelle du bien-être, et cultive l'autonomie de chacun
+            par un apprentissage progressif et respectueux.
+          </p>
+          <p>
+            Fondé en septembre 2013, le studio Savitri Yoga propose un enseignement
+            enraciné dans la tradition du <strong>Yoga Sivananda</strong>. Les cours sont
+            assurés par <strong>Corinne Montigny</strong>, professeure diplômée du Centre
+            International de Yoga Sivananda et de l'Institut de Yogathérapie de Paris (2016).
+          </p>
+          <ul class="feature-list">
+            <li>Postures (asanas) adaptées à chaque niveau</li>
+            <li>Respiration (pranayama) et relaxation profonde</li>
+            <li>Méditation et écoute de soi</li>
+            <li>Une approche bienveillante, sans compétition</li>
+          </ul>
+        </div>
+        <figure class="about-figure reveal">
+          <div class="about-illus" aria-hidden="true">
+            <svg viewBox="0 0 300 320" width="100%" height="100%">
+              <defs>
+                <linearGradient id="gA" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="var(--accent)" stop-opacity="0.9"/>
+                  <stop offset="1" stop-color="var(--sage)" stop-opacity="0.9"/>
+                </linearGradient>
+              </defs>
+              <circle cx="150" cy="120" r="90" fill="url(#gA)" opacity="0.18"/>
+              <circle cx="150" cy="90" r="26" fill="url(#gA)"/>
+              <path d="M150 118 C 110 130 92 170 96 210 L 204 210 C 208 170 190 130 150 118 Z" fill="url(#gA)"/>
+              <path d="M96 210 C 60 220 44 250 60 280 L 90 250 Z" fill="var(--sage)" opacity="0.8"/>
+              <path d="M204 210 C 240 220 256 250 240 280 L 210 250 Z" fill="var(--sage)" opacity="0.8"/>
+              <path d="M40 300 Q150 270 260 300" stroke="var(--accent)" stroke-width="3" fill="none" opacity="0.6"/>
+            </svg>
+          </div>
+          <figcaption>« Le corps est capable d'autorégulation. » — l'esprit de la yogathérapie</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ LES COURS + PLANNING ============ -->
+    <section id="cours" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Les cours collectifs</p>
+          <h2 class="section-title">Un planning hebdomadaire près de chez vous</h2>
+          <p class="section-intro">
+            Les cours se déroulent dans quatre lieux autour de Saint-Malo. Filtrez le planning
+            par lieu pour trouver le créneau qui vous convient.
+          </p>
+        </div>
+
+        <!-- Filtres (générés depuis data/contenu.js) -->
+        <div class="schedule-filters reveal" id="scheduleFilters" role="group" aria-label="Filtrer par lieu"></div>
+
+        <!-- Tableau planning (généré depuis data/contenu.js) -->
+        <div class="schedule-wrap reveal">
+          <table class="schedule">
+            <thead>
+              <tr><th>Jour</th><th>Horaire</th><th>Cours</th><th>Lieu</th></tr>
+            </thead>
+            <tbody id="scheduleBody"></tbody>
+          </table>
+          <p class="schedule-note">🕗 Horaires donnés à titre indicatif — contactez le studio pour le planning exact de la saison en cours.</p>
+        </div>
+
+        <!-- Lieux (générés depuis data/contenu.js) -->
+        <div class="locations reveal">
+          <h3 class="minor-title">Nos lieux de cours</h3>
+          <div class="locations-grid" id="locationsGrid"></div>
+          <p class="bring-note">
+            <strong>À prévoir :</strong> des vêtements souples et confortables. Un tapis
+            anti-dérapant ainsi qu'un plaid seront nécessaires.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRATIQUES / SERVICES ============ -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Les pratiques</p>
+          <h2 class="section-title">Trouvez la voie qui vous correspond</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">🪑</span>
+            <h3>Yoga sur chaise</h3>
+            <p>
+              Pratiqué assis, il redonne du bien-être aux personnes présentant des capacités
+              physiques limitées. Des séances codifiées mêlant mouvements, souffle,
+              visualisations et méditation.
+            </p>
+            <p class="service-meta">Chaque mardi · 10h45 · Saint-Coulomb</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">🌙</span>
+            <h3>Yoga Nidra</h3>
+            <p>
+              Le « yoga du sommeil » se pratique allongé, sans aucun mouvement, guidé vers une
+              relaxation profonde. Il améliore le sommeil, réduit les tensions et renforce le
+              système nerveux.
+            </p>
+            <p class="service-meta">Relaxation profonde · tous niveaux</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">🌿</span>
+            <h3>Yogathérapie</h3>
+            <p>
+              L'utilisation ciblée des outils du yoga couplée aux connaissances médicales
+              actuelles, pour la prévention et le suivi de diverses pathologies. En séance
+              individuelle, adaptée à chacun.
+            </p>
+            <p class="service-meta">Individuel · non substitutif d'un suivi médical</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">💆</span>
+            <h3>Massages</h3>
+            <p>
+              Abhyanga, massage du dos, du corps et du visage, massage personnalisé ou bain
+              sonore aux bols tibétains : un temps de lâcher-prise et de rééquilibrage
+              énergétique.
+            </p>
+            <p class="service-meta"><a href="#massages">Voir les formules →</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MASSAGES DÉTAIL ============ -->
+    <section id="massages" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Massages & sonothérapie</p>
+          <h2 class="section-title">Prendre soin du corps et de l'esprit</h2>
+        </div>
+        <div class="massage-list">
+          <article class="massage-item reveal">
+            <div class="massage-info"><h3>Abhyanga</h3><p>Massage à l'huile de tout le corps qui stimule la peau, les muscles et les circulations sanguine, lymphatique, nerveuse et énergétique.</p></div>
+            <div class="massage-price"><span class="dur">1h45</span><span class="price">90 €</span></div>
+          </article>
+          <article class="massage-item reveal">
+            <div class="massage-info"><h3>Massage du dos</h3><p>Retrouver le calme intérieur, libérer les tensions et soulager les douleurs physiques et émotionnelles.</p></div>
+            <div class="massage-price"><span class="dur">45 min</span><span class="price">55 €</span></div>
+          </article>
+          <article class="massage-item reveal">
+            <div class="massage-info"><h3>Avant du corps & visage</h3><p>Massage doux et profond pour une relaxation physique et émotionnelle. Agit sur le stress, l'anxiété, les insomnies et les maux de tête.</p></div>
+            <div class="massage-price"><span class="dur">45 min</span><span class="price">55 €</span></div>
+          </article>
+          <article class="massage-item reveal">
+            <div class="massage-info"><h3>Massage personnalisé</h3><p>Pour stimuler l'énergie vitale du corps en suivant les attentes et les besoins de chacun.</p></div>
+            <div class="massage-price"><span class="dur">45 min</span><span class="price">55 €</span></div>
+          </article>
+          <article class="massage-item reveal">
+            <div class="massage-info"><h3>Bols tibétains</h3><p>Lâcher-prise et rééquilibrage énergétique par les sons et les vibrations des bols tibétains.</p></div>
+            <div class="massage-price"><span class="dur">60 min</span><span class="price">60 €</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WIDGET RESPIRATION (feature ajoutée) ============ -->
+    <section id="respiration" class="section breathe-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Petite pause</p>
+          <h2 class="section-title">Un exercice de respiration guidée</h2>
+          <p class="section-intro">
+            Offrez-vous une minute de calme. Suivez le cercle : inspirez quand il grandit,
+            retenez, puis expirez quand il se rétracte. Idéal avant un cours ou en fin de journée.
+          </p>
+        </div>
+
+        <div class="breathe reveal">
+          <div class="breathe-visual">
+            <div class="breathe-circle" id="breatheCircle">
+              <span class="breathe-word" id="breatheWord">Prêt ?</span>
+            </div>
+          </div>
+          <div class="breathe-controls">
+            <div class="breathe-modes" role="group" aria-label="Choisir un rythme">
+              <button class="chip is-active" data-mode="calm" type="button">Apaisant · 4-7-8</button>
+              <button class="chip" data-mode="box" type="button">Équilibre · carré 4-4-4-4</button>
+              <button class="chip" data-mode="energy" type="button">Énergie · 4-4</button>
+            </div>
+            <button class="btn btn-primary" id="breatheToggle" type="button">Commencer</button>
+            <p class="breathe-count"><span id="breatheCycles">0</span> cycle(s) complété(s)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TARIFS ============ -->
+    <section id="tarifs" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Tarifs</p>
+          <h2 class="section-title">Des formules simples et flexibles</h2>
+          <p class="section-intro">Année scolaire de septembre à juin. Paiement possible en 3 chèques (encaissement septembre, janvier, avril).</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card featured reveal">
+            <span class="price-badge">Le plus choisi</span>
+            <h3>Hatha Yoga</h3>
+            <p class="price-big">345 € <span>/ an · 1 cours</span></p>
+            <ul>
+              <li>400 € / an — 2 cours par semaine</li>
+              <li>150 € / trimestre (1 cours) · 170 € (2 cours)</li>
+              <li>60 € / mois</li>
+              <li>14 € la séance à l'unité</li>
+              <li>Tarif couple : 300 € / personne / an</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary btn-block">S'inscrire</a>
+          </article>
+
+          <article class="price-card reveal">
+            <h3>Yoga Nidra & sur chaise</h3>
+            <p class="price-big">300 € <span>/ an</span></p>
+            <ul>
+              <li>115 € / trimestre</li>
+              <li>50 € / mois</li>
+              <li>11 € la séance à l'unité</li>
+              <li>2ᵉ abonnement trimestriel : 80 €</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost btn-block">Nous contacter</a>
+          </article>
+
+          <article class="price-card reveal">
+            <h3>Séances individuelles</h3>
+            <p class="price-big">40 € <span>/ yogathérapie</span></p>
+            <ul>
+              <li>Yoga à domicile (1h) : 50 € pour 1–2 personnes</li>
+              <li>À partir de 3 personnes : 20 € / personne</li>
+              <li>Massages : de 55 € à 90 € selon la formule</li>
+              <li>Bols tibétains : 60 € (60 min)</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost btn-block">Prendre rendez-vous</a>
+          </article>
+        </div>
+        <p class="pricing-fineprint">Abonnement annuel en 3 chèques (3 × 115 € ou 3 × 133 €) à remettre à la rentrée — sans remboursement possible.</p>
+      </div>
+    </section>
+
+    <!-- ============ GALERIE ============ -->
+    <section id="galerie" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Galerie</p>
+          <h2 class="section-title">L'atmosphère du studio</h2>
+          <p class="section-intro">Cliquez sur une image pour l'agrandir.</p>
+        </div>
+        <div class="gallery" id="gallery">
+          <!-- Les vignettes SVG sont générées ci-dessous, cliquables vers la lightbox -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TÉMOIGNAGES ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Témoignages</p>
+          <h2 class="section-title">Ce que vivent les pratiquants</h2>
+        </div>
+        <div class="testimonials">
+          <blockquote class="reveal">
+            <p>« Des cours à taille humaine, une écoute vraie. Je repars toujours plus légère et alignée. »</p>
+            <footer>— Nathalie, Saint-Coulomb</footer>
+          </blockquote>
+          <blockquote class="reveal">
+            <p>« Le yoga sur chaise a redonné de la mobilité à ma mère. Un immense merci à Corinne. »</p>
+            <footer>— Julien, St-Jouan</footer>
+          </blockquote>
+          <blockquote class="reveal">
+            <p>« Le yoga nidra m'a réconciliée avec le sommeil. Une bulle de calme dans la semaine. »</p>
+            <footer>— Sophie, Langrolay</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Questions fréquentes</p>
+          <h2 class="section-title">Avant de commencer</h2>
+        </div>
+        <div class="faq" id="faq">
+          <details class="faq-item reveal">
+            <summary>Faut-il être souple ou expérimenté pour débuter ?</summary>
+            <div class="faq-body"><p>Pas du tout. Les cours accueillent tous les niveaux et les postures sont adaptées à chacun. Le yoga se pratique sans compétition ni performance.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Que dois-je apporter au cours ?</summary>
+            <div class="faq-body"><p>Des vêtements souples et confortables, un tapis anti-dérapant et un plaid pour la relaxation finale.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Puis-je essayer avant de m'inscrire à l'année ?</summary>
+            <div class="faq-body"><p>Oui, un cours d'essai est possible. Contactez le studio pour convenir d'une date selon le lieu qui vous intéresse.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>La yogathérapie remplace-t-elle un suivi médical ?</summary>
+            <div class="faq-body"><p>Non. La yogathérapie est un accompagnement complémentaire et n'est en aucun cas un substitut aux thérapies médicales modernes.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Comment se déroule le paiement de l'abonnement annuel ?</summary>
+            <div class="faq-body"><p>Il peut être réglé en 3 chèques (3 × 115 € ou 3 × 133 €) remis à la rentrée, encaissés en septembre, janvier et avril.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section section-alt">
+      <div class="container grid-2 contact-grid">
+        <div class="reveal">
+          <p class="section-eyebrow">Contact</p>
+          <h2 class="section-title">Écrivons-nous</h2>
+          <p>Une question, une envie d'essayer un cours, une demande de massage ou de yogathérapie ? Laissez un message, Corinne vous répondra rapidement.</p>
+
+          <ul class="contact-info">
+            <li>
+              <span class="ci-ic" aria-hidden="true">📞</span>
+              <a href="tel:+33667825201">06 67 82 52 01</a>
+            </li>
+            <li>
+              <span class="ci-ic" aria-hidden="true">✉️</span>
+              <a href="mailto:corinnemontigny.yoga@gmail.com">corinnemontigny.yoga@gmail.com</a>
+            </li>
+            <li>
+              <span class="ci-ic" aria-hidden="true">📍</span>
+              <span>Région de Saint-Malo (35) — 4 lieux de cours</span>
+            </li>
+            <li>
+              <span class="ci-ic" aria-hidden="true">🔗</span>
+              <a href="https://www.facebook.com/Savitri-Yoga-Saint-Malo-382579358537421/" target="_blank" rel="noopener">Savitri Yoga sur Facebook</a>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" name="contact" method="POST"
+              data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <!-- Requis par Netlify Forms pour l'envoi (surtout en AJAX) -->
+          <input type="hidden" name="form-name" value="contact" />
+          <!-- Piège anti-spam : masqué, ne pas remplir -->
+          <p class="hp-field" hidden aria-hidden="true">
+            <label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          </p>
+          <div class="field">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" autocomplete="name" required />
+            <span class="error" data-for="name"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+            <span class="error" data-for="email"></span>
+          </div>
+          <div class="field">
+            <label for="subject">Sujet</label>
+            <select id="subject" name="subject">
+              <option>Renseignement cours collectifs</option>
+              <option>Cours d'essai</option>
+              <option>Yogathérapie (individuel)</option>
+              <option>Massage / bols tibétains</option>
+              <option>Yoga en entreprise</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <span class="error" data-for="message"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Envoyer le message</button>
+          <p class="form-success" id="formSuccess" hidden>🙏 Merci ! Votre message a bien été envoyé.</p>
+          <p class="form-hint">Une fois le site déployé sur Netlify, votre message est envoyé automatiquement (en local, l'envoi est simulé).</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-text"><strong>Savitri Yoga</strong><em>Saint-Malo · depuis 2013</em></span>
+        <p>Hatha Yoga Sivananda · Yoga sur chaise · Yoga Nidra · Yogathérapie · Massages</p>
+      </div>
+      <nav class="footer-nav" aria-label="Liens de pied de page">
+        <a href="#apropos">Le Yoga</a>
+        <a href="#cours">Les cours</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-legal">
+        © <span id="year"></span> Savitri Yoga Saint-Malo — Corinne Montigny.
+        Reproduction pédagogique améliorée du site original.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bouton retour en haut -->
+  <button class="to-top" id="toTop" type="button" aria-label="Revenir en haut">↑</button>
+
+  <!-- Lightbox galerie -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">✕</button>
+    <div class="lightbox-content" id="lightboxContent"></div>
+  </div>
+
+  <!-- Contenu modifiable (horaires & lieux) chargé AVANT main.js -->
+  <script src="data/contenu.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
