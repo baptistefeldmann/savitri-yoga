@@ -315,6 +315,7 @@ p { margin: 0 0 1em; }
 .testimonials blockquote::before { content: "\201C"; font-family: var(--font-head); font-size: 4rem; color: var(--accent); opacity: .3; position: absolute; top: .2rem; left: 1rem; line-height: 1; }
 .testimonials blockquote p { font-family: var(--font-head); font-size: 1.25rem; font-style: italic; color: var(--ink); position: relative; }
 .testimonials blockquote footer { color: var(--sage-dark); font-weight: 700; font-size: .9rem; }
+.rating-stars { color: var(--gold); letter-spacing: 1px; margin-right: .4rem; }
 
 /* ---------- FAQ ---------- */
 .faq-item { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: .8rem; overflow: hidden; }

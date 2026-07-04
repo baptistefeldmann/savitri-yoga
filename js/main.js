@@ -203,9 +203,7 @@
       btn.type = "button";
       btn.setAttribute("aria-label", "Agrandir : " + p.cap);
       btn.dataset.index = i;
-      btn.innerHTML =
-        `<img src="${p.src}" alt="${escapeHTML(p.cap)}" loading="lazy" />` +
-        `<span class="cap">${escapeHTML(p.cap)}</span>`;
+      btn.innerHTML = `<img src="${p.src}" alt="${escapeHTML(p.cap)}" loading="lazy" />`;
       gallery.appendChild(btn);
     });
   }

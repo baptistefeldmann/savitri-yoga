@@ -118,7 +118,9 @@ pour la prévisualisation intégrée.
   menu y renvoie vers *contact*), donc texte à faire valider par la cliente.
 - **Visuels** = image de fond du hero + galerie = vraies photos reprises du site
   source (`assets/photos/`). La galerie ne retient que les photos **noir et blanc**.
-- **Témoignages** = exemples illustratifs (à remplacer par de vrais avis).
+- **Avis** = vrais avis Google (5,0/5, 4 avis ; 3 avec texte : Sylvie M., Julien F.,
+  Odile G.), récupérés via un agrégateur. Légendes de la galerie retirées (l'`alt`
+  reste pour l'accessibilité).
 - Coordonnées réelles issues du site source : `06 67 82 52 01`,
   `corinnemontigny.yoga@gmail.com`, Facebook « Savitri Yoga Saint-Malo ».
 
