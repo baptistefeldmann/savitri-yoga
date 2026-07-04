@@ -103,11 +103,21 @@ pour la prévisualisation intégrée.
 - **Formulaire de contact** = fonctionnel via Netlify Forms une fois déployé ;
   en local l'envoi est simulé. Notifications email à configurer côté Netlify
   (Site settings → Forms → notifications).
-- **Horaires du planning** = indicatifs (le site source ne les publiait pas tous).
-  Seul « Yoga sur chaise, mardi 10h45 à Saint-Coulomb » est confirmé.
+- **Horaires du planning** (`data/contenu.js`) = repris du **planning officiel
+  « Rentrée 2026 »** (image du site source, cours à partir du 07/09/2026). Les
+  tarifs (`#tarifs`) et les massages (`#massages`, sans les bols tibétains, désormais
+  supprimés) sont également alignés sur le site source.
+- **Image de fond du hero** = `fond-meditation.jpg` en `background-attachment: fixed`
+  (image statique, le texte défile dessus), sous un voile `--hero-overlay` léger.
+- **Section « Le Yoga »** (`#apropos`) illustrée par `yoga-nidra.jpg` (image de la
+  page Yoga Nidra du site source), classe `.about-photo`.
+- **Formulaire d'inscription** = PDF `assets/formulaire-inscription.pdf` (repris du
+  site source), proposé au téléchargement dans `#contact` (`.download-card`).
+- **Section « Entreprises »** (`#entreprises`) = contenu **rédigé** (yoga en
+  entreprise) : la page entreprise d'origine n'existe plus sur le site source (le
+  menu y renvoie vers *contact*), donc texte à faire valider par la cliente.
 - **Visuels** = image de fond du hero + galerie = vraies photos reprises du site
   source (`assets/photos/`). La galerie ne retient que les photos **noir et blanc**.
-  Certaines illustrations SVG subsistent (logo, section « à propos »).
 - **Témoignages** = exemples illustratifs (à remplacer par de vrais avis).
 - Coordonnées réelles issues du site source : `06 67 82 52 01`,
   `corinnemontigny.yoga@gmail.com`, Facebook « Savitri Yoga Saint-Malo ».

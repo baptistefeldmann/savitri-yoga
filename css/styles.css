@@ -33,9 +33,10 @@
 
   --t: 0.35s cubic-bezier(.2,.7,.2,1);
 
-  /* Voile posé sur l'image de fond du hero (lisibilité du texte) */
+  /* Voile posé sur l'image de fond du hero (léger : l'image reste bien visible,
+     dégradé plus soutenu à gauche pour garder le texte lisible) */
   --hero-overlay: linear-gradient(90deg,
-      rgba(250,243,232,.94) 0%, rgba(250,243,232,.80) 42%, rgba(250,243,232,.30) 100%);
+      rgba(250,243,232,.86) 0%, rgba(250,243,232,.55) 45%, rgba(250,243,232,.12) 100%);
 }
 
 [data-theme="dark"] {
@@ -54,7 +55,7 @@
   --shadow: 0 12px 34px -14px rgba(0,0,0,.6);
   --shadow-soft: 0 8px 20px -12px rgba(0,0,0,.55);
   --hero-overlay: linear-gradient(90deg,
-      rgba(23,17,11,.92) 0%, rgba(23,17,11,.78) 45%, rgba(23,17,11,.45) 100%);
+      rgba(23,17,11,.84) 0%, rgba(23,17,11,.58) 45%, rgba(23,17,11,.20) 100%);
 }
 
 /* ---------- Reset léger ---------- */
@@ -158,11 +159,13 @@ p { margin: 0 0 1em; }
 .hero {
   position: relative; overflow: hidden;
   padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5.5rem);
-  /* Image de fond (méditation) reprise du site original, sous un voile pour la lisibilité */
+  /* Image de fond (méditation) reprise du site original, sous un voile léger.
+     background-attachment: fixed → l'image reste STATIQUE, le texte défile dessus. */
   background-image: var(--hero-overlay), url("../assets/photos/fond-meditation.jpg");
   background-size: cover, cover;
   background-position: center right, center right;
   background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 .hero-blob { position: absolute; border-radius: 50%; filter: blur(40px); opacity: .5; }
@@ -207,6 +210,7 @@ p { margin: 0 0 1em; }
 
 .about-figure { margin: 0; }
 .about-illus { background: linear-gradient(160deg, var(--card), var(--bg-alt)); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow); }
+.about-photo { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow); object-fit: cover; aspect-ratio: 3/2; }
 .about-figure figcaption { margin-top: 1rem; text-align: center; font-family: var(--font-head); font-style: italic; font-size: 1.15rem; color: var(--ink-soft); }
 
 /* ---------- Planning ---------- */
@@ -326,6 +330,10 @@ p { margin: 0 0 1em; }
 .contact-info { list-style: none; padding: 0; margin: 1.6rem 0 0; }
 .contact-info li { display: flex; align-items: center; gap: .8rem; padding: .6rem 0; font-size: 1.05rem; }
 .ci-ic { font-size: 1.2rem; }
+.download-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.6rem; padding: 1.2rem 1.4rem; background: color-mix(in srgb, var(--gold) 14%, var(--card)); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; }
+.download-card strong { font-family: var(--font-head); font-size: 1.25rem; color: var(--ink); }
+.download-card p { margin: .2rem 0 0; font-size: .92rem; color: var(--ink-soft); }
+.download-card .btn { flex-shrink: 0; }
 .contact-form { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(1.5rem, 4vw, 2.4rem); box-shadow: var(--shadow); }
 .field { margin-bottom: 1.1rem; }
 .field label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: .4rem; color: var(--ink); }

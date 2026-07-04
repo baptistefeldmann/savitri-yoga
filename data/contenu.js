@@ -58,12 +58,22 @@ window.SAVITRI_DATA = {
      - lieu    : doit reprendre un "id" de la liste des lieux ci-dessus.
      ───────────────────────────────────────────── */
   planning: [
-    { jour: "Lundi",    horaire: "18h30 – 20h00", cours: "Hatha Yoga",      lieu: "saint-coulomb" },
-    { jour: "Mardi",    horaire: "10h45 – 11h45", cours: "Yoga sur chaise", lieu: "saint-coulomb" },
-    { jour: "Mardi",    horaire: "18h30 – 20h00", cours: "Hatha Yoga",      lieu: "langrolay" },
-    { jour: "Mercredi", horaire: "19h00 – 20h30", cours: "Hatha Yoga",      lieu: "benoit" },
-    { jour: "Jeudi",    horaire: "18h30 – 20h00", cours: "Hatha Yoga",      lieu: "jouan" },
-    { jour: "Vendredi", horaire: "09h30 – 10h45", cours: "Yoga Nidra",      lieu: "saint-coulomb" },
+    // Planning "Rentrée 2026" repris du site officiel (à partir du 07/09/2026).
+    { jour: "Lundi",    horaire: "09h00", cours: "Hatha Yoga",            lieu: "benoit" },
+    { jour: "Lundi",    horaire: "11h00", cours: "Hatha Yoga",            lieu: "jouan" },
+    { jour: "Lundi",    horaire: "12h30", cours: "Yoga Nidra / Ayurveda", lieu: "jouan" },
+    { jour: "Lundi",    horaire: "18h00", cours: "Hatha Yoga",            lieu: "benoit" },
+    { jour: "Lundi",    horaire: "19h30", cours: "Hatha Yoga",            lieu: "benoit" },
+    { jour: "Mardi",    horaire: "09h00", cours: "Hatha Yoga",            lieu: "saint-coulomb" },
+    { jour: "Mardi",    horaire: "10h30", cours: "Yoga sur chaise",       lieu: "saint-coulomb" },
+    { jour: "Mardi",    horaire: "17h30", cours: "Hatha Yoga",            lieu: "jouan" },
+    { jour: "Mardi",    horaire: "19h15", cours: "Hatha Yoga",            lieu: "langrolay" },
+    { jour: "Mercredi", horaire: "09h00", cours: "Hatha Yoga",            lieu: "jouan" },
+    { jour: "Mercredi", horaire: "11h00", cours: "Hatha Yoga",            lieu: "benoit" },
+    { jour: "Mercredi", horaire: "17h00", cours: "Yoga sur chaise",       lieu: "jouan" },
+    { jour: "Mercredi", horaire: "18h30", cours: "Hatha Yoga",            lieu: "jouan" },
+    { jour: "Jeudi",    horaire: "18h00", cours: "Hatha Yoga",            lieu: "saint-coulomb" },
+    { jour: "Jeudi",    horaire: "19h30", cours: "Hatha Yoga",            lieu: "saint-coulomb" },
   ],
 
 };
