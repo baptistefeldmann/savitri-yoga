@@ -5,19 +5,22 @@
 
 /* ---------- Design tokens ---------- */
 :root {
-  --cream: #faf6f0;
-  --cream-2: #f2ead0;
-  --sage: #6b7d4f;
-  --sage-dark: #55663d;
-  --accent: #c17a5a;      /* terracotta */
-  --accent-dark: #a5623f;
-  --gold: #cba135;
-  --ink: #2d2a26;
-  --ink-soft: #5c564e;
-  --line: #e5dccf;
-  --card: #ffffff;
-  --bg: #faf6f0;
-  --bg-alt: #f3ece1;
+  /* Palette orangé / beige (calée sur le doré du logo #bd8937).
+     Les noms sont conservés : --sage = doré-ocre (couleur secondaire),
+     --accent = orange (boutons / liens). */
+  --cream: #f8f1e5;
+  --cream-2: #f0e2c9;
+  --sage: #b07a2f;        /* ocre doré (ex-vert) */
+  --sage-dark: #8a5d20;
+  --accent: #d1793a;      /* orange */
+  --accent-dark: #b35f27;
+  --gold: #c9962f;
+  --ink: #33291d;
+  --ink-soft: #6d5c47;
+  --line: #e9dcc6;
+  --card: #fffdf9;
+  --bg: #faf3e8;
+  --bg-alt: #f2e6d3;
 
   --radius: 16px;
   --radius-lg: 26px;
@@ -29,28 +32,34 @@
   --font-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --t: 0.35s cubic-bezier(.2,.7,.2,1);
+
+  /* Voile posé sur l'image de fond du hero (lisibilité du texte) */
+  --hero-overlay: linear-gradient(90deg,
+      rgba(250,243,232,.94) 0%, rgba(250,243,232,.80) 42%, rgba(250,243,232,.30) 100%);
 }
 
 [data-theme="dark"] {
-  --cream: #1a1815;
-  --sage: #9aad76;
-  --sage-dark: #b6c795;
-  --accent: #e0987a;
-  --accent-dark: #eaad93;
-  --gold: #d9b957;
-  --ink: #f1ebe1;
-  --ink-soft: #c3bab0;
-  --line: #38332c;
-  --card: #24211d;
-  --bg: #17150f;
-  --bg-alt: #201d18;
+  --cream: #1c1712;
+  --sage: #d7a860;        /* ocre doré clair */
+  --sage-dark: #e3c084;
+  --accent: #e79a5f;      /* orange clair */
+  --accent-dark: #eeb388;
+  --gold: #dcbb5c;
+  --ink: #f3e9da;
+  --ink-soft: #cabaa4;
+  --line: #3b3025;
+  --card: #251d14;
+  --bg: #17110b;
+  --bg-alt: #201810;
   --shadow: 0 12px 34px -14px rgba(0,0,0,.6);
   --shadow-soft: 0 8px 20px -12px rgba(0,0,0,.55);
+  --hero-overlay: linear-gradient(90deg,
+      rgba(23,17,11,.92) 0%, rgba(23,17,11,.78) 45%, rgba(23,17,11,.45) 100%);
 }
 
 /* ---------- Reset léger ---------- */
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+html { scroll-behavior: smooth; scroll-padding-top: 108px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
@@ -96,10 +105,11 @@ p { margin: 0 0 1em; }
   transition: border-color var(--t), background var(--t), box-shadow var(--t);
 }
 .site-header.scrolled { border-color: var(--line); box-shadow: var(--shadow-soft); }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 72px; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: clamp(78px, 11vw, 96px); }
 
-.brand { display: flex; align-items: center; gap: .6rem; color: var(--sage); }
-.brand-mark { display: grid; place-items: center; color: var(--sage); }
+.brand { display: flex; align-items: center; }
+.brand-logo { height: clamp(56px, 8.5vw, 72px); width: auto; display: block; }
+/* Rappel : la marque du pied de page utilise encore .brand-text (voir footer) */
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
 .brand-text strong { font-family: var(--font-head); font-size: 1.4rem; color: var(--ink); letter-spacing: .3px; }
 .brand-text em { font-style: normal; font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); }
@@ -145,12 +155,20 @@ p { margin: 0 0 1em; }
 .btn-block { width: 100%; }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; overflow: hidden; padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5.5rem); }
+.hero {
+  position: relative; overflow: hidden;
+  padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5.5rem);
+  /* Image de fond (méditation) reprise du site original, sous un voile pour la lisibilité */
+  background-image: var(--hero-overlay), url("../assets/photos/fond-meditation.jpg");
+  background-size: cover, cover;
+  background-position: center right, center right;
+  background-repeat: no-repeat, no-repeat;
+}
 .hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 .hero-blob { position: absolute; border-radius: 50%; filter: blur(40px); opacity: .5; }
-.hero-blob--1 { width: 480px; height: 480px; background: radial-gradient(circle, var(--sage), transparent 70%); top: -120px; right: -80px; opacity: .38; }
-.hero-blob--2 { width: 420px; height: 420px; background: radial-gradient(circle, var(--accent), transparent 70%); bottom: -140px; left: -100px; opacity: .32; }
-.hero-blob--3 { width: 300px; height: 300px; background: radial-gradient(circle, var(--gold), transparent 70%); top: 40%; left: 45%; opacity: .18; }
+.hero-blob--1 { width: 480px; height: 480px; background: radial-gradient(circle, var(--sage), transparent 70%); top: -120px; right: -80px; opacity: .22; }
+.hero-blob--2 { width: 420px; height: 420px; background: radial-gradient(circle, var(--accent), transparent 70%); bottom: -140px; left: -100px; opacity: .20; }
+.hero-blob--3 { width: 300px; height: 300px; background: radial-gradient(circle, var(--gold), transparent 70%); top: 40%; left: 45%; opacity: .12; }
 .hero-inner { position: relative; z-index: 1; max-width: 780px; }
 .hero-eyebrow { text-transform: uppercase; letter-spacing: 3px; font-size: .78rem; font-weight: 700; color: var(--sage); margin-bottom: 1rem; }
 .hero-title { font-size: clamp(2.6rem, 7vw, 5rem); font-weight: 500; letter-spacing: -.5px; margin-bottom: 1.2rem; }
@@ -219,13 +237,15 @@ p { margin: 0 0 1em; }
 .bring-note { margin-top: 1.6rem; padding: 1.1rem 1.3rem; background: color-mix(in srgb, var(--gold) 14%, transparent); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; }
 
 /* ---------- Services ---------- */
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; align-items: start; }
 .service-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 2rem 1.7rem; box-shadow: var(--shadow-soft); transition: transform var(--t), box-shadow var(--t), border-color var(--t); }
 .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--sage) 45%, var(--line)); }
 .service-icon { font-size: 2.2rem; display: block; margin-bottom: .8rem; }
 .service-card h3 { font-size: 1.5rem; }
 .service-card p { color: var(--ink-soft); font-size: .97rem; }
 .service-meta { font-size: .82rem; color: var(--sage-dark); font-weight: 700; margin-top: 1rem; margin-bottom: 0; }
+.service-sub { display: block; font-size: .95rem; font-style: italic; color: var(--ink-soft); font-family: var(--font-body); font-weight: 400; }
+.service-quote { font-family: var(--font-head); font-style: italic; font-size: 1.15rem; color: var(--sage-dark); }
 
 /* ---------- Massages ---------- */
 .massage-list { display: flex; flex-direction: column; gap: 1rem; }
@@ -274,12 +294,14 @@ p { margin: 0 0 1em; }
 .gallery-item { border: 0; padding: 0; cursor: pointer; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-soft); aspect-ratio: 4/3; position: relative; background: var(--bg-alt); transition: transform var(--t), box-shadow var(--t); }
 .gallery-item:hover { transform: scale(1.02); box-shadow: var(--shadow); }
 .gallery-item svg { width: 100%; height: 100%; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
 .gallery-item .cap { position: absolute; left: 0; bottom: 0; right: 0; padding: .8rem 1rem; background: linear-gradient(0deg, rgba(20,15,10,.6), transparent); color: #fff; font-family: var(--font-head); font-size: 1.1rem; text-align: left; }
 
 .lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(20,15,10,.85); backdrop-filter: blur(6px); display: grid; place-items: center; padding: 2rem; }
 .lightbox[hidden] { display: none; }
-.lightbox-content { max-width: 640px; width: 100%; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); }
+.lightbox-content { max-width: min(880px, 92vw); width: 100%; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); }
 .lightbox-content svg { width: 100%; height: auto; }
+.lightbox-content img { width: 100%; height: auto; max-height: 85vh; object-fit: contain; display: block; }
 .lightbox-close { position: absolute; top: 1.2rem; right: 1.5rem; width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255,255,255,.15); color: #fff; font-size: 1.3rem; cursor: pointer; transition: background var(--t); }
 .lightbox-close:hover { background: rgba(255,255,255,.3); }
 
@@ -374,5 +396,4 @@ p { margin: 0 0 1em; }
 
 @media (max-width: 420px) {
   .hero-stats { gap: 1.5rem; }
-  .brand-text em { display: none; }
 }

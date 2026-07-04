@@ -43,11 +43,26 @@ pour la prévisualisation intégrée.
 - **`index.html`** — page unique, structurée en sections avec `id` servant
   d'ancres de navigation : `#accueil`, `#apropos`, `#cours`, `#services`,
   `#massages`, `#respiration`, `#tarifs`, `#galerie`, `#contact`.
+- **`assets/photos/`** — logos + photos. `logo_savitri_yoga.png` = logo fourni
+  (fond crème opaque, source). Versions **détourées** (fond transparent) dérivées
+  par script : `logo-savitri.png` = logo complet (icône + « Savitri Yoga » +
+  tagline), rogné au plus près, utilisé dans l'en-tête (`.brand-logo`) ;
+  `logo-mark.png` = icône lotus seule ; `favicon.png` = icône lotus carrée
+  256×256, servie comme favicon (l'ancien `assets/favicon.svg` n'est plus
+  référencé). `fond-meditation.jpg`
+  est l'image de fond du hero (posée sous un voile `--hero-overlay` pour la
+  lisibilité, clair/sombre). `galerie/nb-01..12.jpg` sont les 12 photos **noir
+  et blanc** de la galerie (le tableau `photos` de `main.js` référence ces
+  fichiers). Les textes de présentation des pratiques (yoga sur chaise, nidra,
+  yogathérapie, massages) sont recopiés **verbatim** depuis le site source.
 - **`css/styles.css`** — un seul fichier, organisé en blocs commentés :
   - *Design tokens* : variables CSS dans `:root`, thème sombre via
     `[data-theme="dark"]`. **Toujours passer par les variables** (`--sage`,
     `--accent`, `--ink`, `--bg`, `--card`, `--line`, `--radius`, `--shadow`…)
-    pour rester cohérent et compatible dark mode.
+    pour rester cohérent et compatible dark mode. ⚠️ Palette **orangé / beige**
+    calée sur le doré du logo (`#bd8937`) : `--sage` n'est plus vert mais un
+    **ocre doré** (couleur secondaire), `--accent` est l'**orange** (boutons /
+    liens), les fonds sont beiges. Les noms de tokens sont conservés.
   - Composants (header, hero, sections, cartes, planning, respiration, tarifs,
     galerie, FAQ, contact, footer) puis **media queries** en fin de fichier
     (`900px`, `760px`, `420px`).
@@ -55,8 +70,8 @@ pour la prévisualisation intégrée.
   bascule de thème (persistée dans `localStorage` sous `savitri-theme`), menu
   mobile, header au scroll + barre de progression, apparition au défilement
   (IntersectionObserver + **filet de sécurité** qui révèle tout si l'observer
-  n'a rien déclenché), filtre du planning, galerie/lightbox (SVG générés),
-  validation du formulaire, widget de respiration.
+  n'a rien déclenché), filtre du planning, galerie/lightbox (photos N&B,
+  tableau `photos`), validation du formulaire, widget de respiration.
 
 ## Conventions
 
@@ -90,7 +105,9 @@ pour la prévisualisation intégrée.
   (Site settings → Forms → notifications).
 - **Horaires du planning** = indicatifs (le site source ne les publiait pas tous).
   Seul « Yoga sur chaise, mardi 10h45 à Saint-Coulomb » est confirmé.
-- **Visuels** = illustrations SVG générées, pas les vraies photos du studio.
+- **Visuels** = image de fond du hero + galerie = vraies photos reprises du site
+  source (`assets/photos/`). La galerie ne retient que les photos **noir et blanc**.
+  Certaines illustrations SVG subsistent (logo, section « à propos »).
 - **Témoignages** = exemples illustratifs (à remplacer par de vrais avis).
 - Coordonnées réelles issues du site source : `06 67 82 52 01`,
   `corinnemontigny.yoga@gmail.com`, Facebook « Savitri Yoga Saint-Malo ».

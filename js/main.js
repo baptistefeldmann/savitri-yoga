@@ -177,41 +177,35 @@
     showDataError("Erreur de lecture de data/contenu.js : " + err.message);
   }
 
-  /* ---------- Galerie (vignettes SVG générées + lightbox) ---------- */
+  /* ---------- Galerie (photos noir & blanc du studio + lightbox) ----------
+     Photos reprises du site original (galerie N&B). object-fit: cover gère
+     le recadrage ; loading="lazy" diffère le chargement hors-écran. */
   const gallery = $("#gallery");
-  const scenes = [
-    { t: "Salutation au soleil", c: ["#c17a5a", "#e0a06f"] },
-    { t: "Posture de l'arbre", c: ["#6b7d4f", "#9aad76"] },
-    { t: "Méditation", c: ["#cba135", "#e6c766"] },
-    { t: "Relaxation (Nidra)", c: ["#7d8ca8", "#a9b6cd"] },
-    { t: "Respiration", c: ["#b5726f", "#d69b98"] },
-    { t: "Sérénité", c: ["#5f8a7d", "#8fb4a8"] },
+  const photos = [
+    { src: "assets/photos/galerie/nb-01.jpg", cap: "Recueillement" },
+    { src: "assets/photos/galerie/nb-02.jpg", cap: "Posture assise" },
+    { src: "assets/photos/galerie/nb-03.jpg", cap: "En cercle" },
+    { src: "assets/photos/galerie/nb-04.jpg", cap: "Cours collectif" },
+    { src: "assets/photos/galerie/nb-05.jpg", cap: "Flexion avant" },
+    { src: "assets/photos/galerie/nb-06.jpg", cap: "Coin méditation" },
+    { src: "assets/photos/galerie/nb-07.jpg", cap: "Souffle" },
+    { src: "assets/photos/galerie/nb-08.jpg", cap: "Relaxation" },
+    { src: "assets/photos/galerie/nb-09.jpg", cap: "Au studio" },
+    { src: "assets/photos/galerie/nb-10.jpg", cap: "Ambiance du studio" },
+    { src: "assets/photos/galerie/nb-11.jpg", cap: "Posture debout" },
+    { src: "assets/photos/galerie/nb-12.jpg", cap: "Étirement" },
   ];
-  const svgScene = (s, big) => `
-    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${s.t}">
-      <defs><linearGradient id="g${s.t.replace(/\W/g, "")}" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="${s.c[1]}"/><stop offset="1" stop-color="${s.c[0]}"/>
-      </linearGradient></defs>
-      <rect width="400" height="300" fill="url(#g${s.t.replace(/\W/g, "")})"/>
-      <circle cx="320" cy="70" r="40" fill="#fff" opacity="0.25"/>
-      <path d="M0 250 Q100 210 200 240 T400 235 V300 H0 Z" fill="#fff" opacity="0.18"/>
-      <g fill="#fff" opacity="0.9" transform="translate(200 175)">
-        <circle cx="0" cy="-46" r="16"/>
-        <path d="M0 -28 C -30 -18 -42 12 -38 44 L 38 44 C 42 12 30 -18 0 -28 Z"/>
-        <path d="M-38 44 C -66 52 -78 74 -66 96 L -44 78 Z"/>
-        <path d="M38 44 C 66 52 78 74 66 96 L 44 78 Z"/>
-      </g>
-      ${big ? "" : `<text x="20" y="285" fill="#fff" font-family="Cormorant Garamond, serif" font-size="0"> </text>`}
-    </svg>`;
 
   if (gallery) {
-    scenes.forEach((s, i) => {
+    photos.forEach((p, i) => {
       const btn = document.createElement("button");
       btn.className = "gallery-item";
       btn.type = "button";
-      btn.setAttribute("aria-label", "Agrandir : " + s.t);
+      btn.setAttribute("aria-label", "Agrandir : " + p.cap);
       btn.dataset.index = i;
-      btn.innerHTML = svgScene(s) + `<span class="cap">${s.t}</span>`;
+      btn.innerHTML =
+        `<img src="${p.src}" alt="${escapeHTML(p.cap)}" loading="lazy" />` +
+        `<span class="cap">${escapeHTML(p.cap)}</span>`;
       gallery.appendChild(btn);
     });
   }
@@ -220,7 +214,8 @@
   const lightboxContent = $("#lightboxContent");
   const lightboxClose = $("#lightboxClose");
   const openLightbox = (i) => {
-    lightboxContent.innerHTML = svgScene(scenes[i], true);
+    const p = photos[i];
+    lightboxContent.innerHTML = `<img src="${p.src}" alt="${escapeHTML(p.cap)}" />`;
     lightbox.hidden = false;
     document.body.style.overflow = "hidden";
     lightboxClose.focus();
