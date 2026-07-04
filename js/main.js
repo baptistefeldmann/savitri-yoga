@@ -146,13 +146,19 @@
         .join("");
     }
 
-    // 3) Cartes de lieux
+    // 3) Cartes de lieux — cliquables : ouvrent Google Maps (nouvel onglet)
     if (locationsGrid) {
       locationsGrid.innerHTML = data.lieux
-        .map((l) =>
-          `<article class="loc-card"><h4>${escapeHTML(l.nom)}</h4>` +
-          `<p>${escapeHTML(l.adresse).replace(/\n/g, "<br />")}</p></article>`
-        )
+        .map((l) => {
+          const requete = `${String(l.adresse).replace(/\n/g, ", ")}, ${l.nom}`;
+          const href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(requete);
+          return `<a class="loc-card" href="${href}" target="_blank" rel="noopener" ` +
+            `aria-label="Ouvrir ${escapeHTML(l.nom)} dans Google Maps (nouvel onglet)">` +
+            `<h4>${escapeHTML(l.nom)}</h4>` +
+            `<p>${escapeHTML(l.adresse).replace(/\n/g, "<br />")}</p>` +
+            `<span class="loc-maps">📍 Voir sur Google Maps →</span>` +
+            `</a>`;
+        })
         .join("");
     }
 
@@ -265,25 +271,51 @@
 
     if (!ok) return;
 
-    // Affiche la confirmation et réinitialise le formulaire
+    const errorEl = $("#formError");
     const showSent = () => {
       form.reset();
+      if (errorEl) errorEl.hidden = true;
       if (success) {
         success.hidden = false;
         setTimeout(() => { success.hidden = true; }, 6000);
       }
     };
+    // En cas d'échec réel (site en ligne), on le DIT au visiteur + repli e-mail,
+    // au lieu d'afficher un faux succès qui masquerait le problème.
+    const showError = () => {
+      if (success) success.hidden = true;
+      if (errorEl) {
+        const mail =
+          "mailto:corinnemontigny.yoga@gmail.com" +
+          "?subject=" + encodeURIComponent("Contact site — " + ($("#subject")?.value || "")) +
+          "&body=" + encodeURIComponent(message + "\n\n— " + name + " (" + email + ")");
+        errorEl.innerHTML =
+          "L'envoi n'a pas abouti. Réessayez, ou écrivez-nous directement à " +
+          '<a href="' + mail + '">corinnemontigny.yoga@gmail.com</a>.';
+        errorEl.hidden = false;
+      }
+    };
 
-    // Soumission compatible Netlify Forms : POST AJAX vers la même page, encodé
-    // en application/x-www-form-urlencoded (inclut le champ caché form-name).
+    // En local (localhost / file://) l'endpoint Netlify n'existe pas : on simule.
+    const isLocal = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || location.protocol === "file:";
+    if (isLocal) { showSent(); return; }
+
+    // Soumission Netlify Forms : POST AJAX vers la même page, encodé en
+    // application/x-www-form-urlencoded (inclut le champ caché form-name=contact).
     const payload = new URLSearchParams(new FormData(form)).toString();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: payload,
     })
-      .then((res) => { if (!res.ok) throw new Error(String(res.status)); showSent(); })
-      .catch(() => { showSent(); }); // en local (hors Netlify), l'endpoint n'existe pas : on simule l'envoi
+      .then((res) => {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        showSent();
+      })
+      .catch((err) => {
+        console.error("[Savitri] Échec de l'envoi du formulaire :", err);
+        showError();
+      });
   });
 
   /* ---------- Widget de respiration guidée ---------- */
