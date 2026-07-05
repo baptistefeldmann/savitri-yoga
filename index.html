@@ -7,11 +7,26 @@
   <meta name="theme-color" content="#d1793a" />
   <title>Savitri Yoga · Saint-Malo — Hatha Yoga, Nidra, Yogathérapie & Massages</title>
 
-  <!-- Open Graph -->
+  <!-- URL canonique (référencement : évite les doublons www / non-www) -->
+  <link rel="canonical" href="https://www.savitriyoga-saintmalo.fr/" />
+
+  <!-- Open Graph (aperçus lors des partages Facebook, Messenger, etc.) -->
   <meta property="og:title" content="Savitri Yoga Saint-Malo" />
   <meta property="og:description" content="Cours de yoga, yoga sur chaise, yoga nidra, yogathérapie et massages avec Corinne Montigny, près de Saint-Malo." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://www.savitriyoga-saintmalo.fr/" />
+  <meta property="og:site_name" content="Savitri Yoga Saint-Malo" />
+  <meta property="og:image" content="https://www.savitriyoga-saintmalo.fr/assets/photos/fond-meditation.jpg" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="1067" />
+  <meta property="og:image:alt" content="Séance de méditation — Savitri Yoga Saint-Malo" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Savitri Yoga Saint-Malo" />
+  <meta name="twitter:description" content="Hatha Yoga (Sivananda), yoga sur chaise, yoga nidra, yogathérapie et massages, autour de Saint-Malo." />
+  <meta name="twitter:image" content="https://www.savitriyoga-saintmalo.fr/assets/photos/fond-meditation.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,6 +35,63 @@
   <link rel="icon" href="assets/photos/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/photos/favicon.png" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Données structurées (référencement local Google).
+       ⚠️ Si les lieux de cours changent dans data/contenu.js, mettre à jour
+       les adresses ci-dessous en conséquence. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.savitriyoga-saintmalo.fr/#savitri-yoga",
+    "name": "Savitri Yoga Saint-Malo",
+    "description": "Cours de Hatha Yoga (tradition Sivananda), yoga sur chaise, yoga nidra, yogathérapie et massages ayurvédiques avec Corinne Montigny, autour de Saint-Malo.",
+    "url": "https://www.savitriyoga-saintmalo.fr/",
+    "telephone": "+33667825201",
+    "email": "corinnemontigny.yoga@gmail.com",
+    "image": "https://www.savitriyoga-saintmalo.fr/assets/photos/fond-meditation.jpg",
+    "logo": "https://www.savitriyoga-saintmalo.fr/assets/photos/logo_savitri_yoga.png",
+    "foundingDate": "2013-09",
+    "priceRange": "€",
+    "founder": {
+      "@type": "Person",
+      "name": "Corinne Montigny",
+      "jobTitle": "Professeure de yoga diplômée (Centre International de Yoga Sivananda, Institut de Yogathérapie de Paris)"
+    },
+    "sameAs": [
+      "https://www.facebook.com/Savitri-Yoga-Saint-Malo-382579358537421/"
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Saint-Malo" },
+      { "@type": "City", "name": "Saint-Coulomb" },
+      { "@type": "City", "name": "Langrolay-sur-Rance" },
+      { "@type": "City", "name": "Saint-Benoît-des-Ondes" },
+      { "@type": "City", "name": "Saint-Jouan-des-Guérets" }
+    ],
+    "location": [
+      {
+        "@type": "Place",
+        "name": "Salle du Complexe Sportif",
+        "address": { "@type": "PostalAddress", "streetAddress": "Rue du Lac", "addressLocality": "Saint-Coulomb", "postalCode": "35350", "addressCountry": "FR" }
+      },
+      {
+        "@type": "Place",
+        "name": "Salle Annexe de la Mairie",
+        "address": { "@type": "PostalAddress", "streetAddress": "Place François Barbu", "addressLocality": "Langrolay-sur-Rance", "postalCode": "22490", "addressCountry": "FR" }
+      },
+      {
+        "@type": "Place",
+        "name": "Maison des Loisirs",
+        "address": { "@type": "PostalAddress", "streetAddress": "53 bis rue du Bord de Mer", "addressLocality": "Saint-Benoît-des-Ondes", "postalCode": "35114", "addressCountry": "FR" }
+      },
+      {
+        "@type": "Place",
+        "name": "Maison du Temps Libre",
+        "address": { "@type": "PostalAddress", "streetAddress": "33 Rue de Rennes", "addressLocality": "Saint-Jouan-des-Guérets", "postalCode": "35430", "addressCountry": "FR" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Skip link (accessibilité) -->

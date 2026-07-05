@@ -89,6 +89,13 @@ pour la prévisualisation intégrée.
 - Site statique **sans build** : `netlify.toml` définit `publish = "."` et une
   commande vide, + en-têtes de sécurité. Pas de cache agressif sur `js/`/`css/`
   (volontaire, pour que les màj de `data/contenu.js` soient vues tout de suite).
+- **SEO** : URL canonique `https://www.savitriyoga-saintmalo.fr/`. Fichiers
+  `robots.txt` + `sitemap.xml` à la racine (mettre à jour `<lastmod>` lors de
+  changements majeurs) ; dans le `<head>` de `index.html` : balise canonical,
+  Open Graph complet (`og:url`, `og:image`…), Twitter Card et données
+  structurées JSON-LD `LocalBusiness` (téléphone, Facebook, les 4 lieux de
+  cours avec adresses). ⚠️ Si un lieu change dans `data/contenu.js`, mettre
+  aussi à jour le bloc JSON-LD.
 - **Formulaire = Netlify Forms** : `<form name="contact" data-netlify="true"
   netlify-honeypot="bot-field">` avec champ caché `form-name` et honeypot.
   L'envoi se fait en **AJAX** (`fetch("/", POST, x-www-form-urlencoded)`) dans le

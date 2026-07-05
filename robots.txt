@@ -1,0 +1,5 @@
+# Savitri Yoga Saint-Malo — exploration autorisée sur tout le site
+User-agent: *
+Allow: /
+
+Sitemap: https://www.savitriyoga-saintmalo.fr/sitemap.xml
