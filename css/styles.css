@@ -234,10 +234,11 @@ p { margin: 0 0 1em; }
 .schedule-note { margin: .9rem 0 0; font-size: .85rem; color: var(--ink-soft); }
 
 .locations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-.loc-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.3rem; box-shadow: var(--shadow-soft); transition: transform var(--t), box-shadow var(--t); }
-.loc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.loc-card { display: block; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.3rem; box-shadow: var(--shadow-soft); color: inherit; text-decoration: none; cursor: pointer; transition: transform var(--t), box-shadow var(--t), border-color var(--t); }
+.loc-card:hover, .loc-card:focus-visible { transform: translateY(-4px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
 .loc-card h4 { color: var(--accent); font-size: 1.2rem; margin-bottom: .3rem; }
 .loc-card p { margin: 0; color: var(--ink-soft); font-size: .95rem; }
+.loc-maps { display: inline-block; margin-top: .7rem; font-size: .82rem; font-weight: 700; color: var(--sage-dark); }
 .bring-note { margin-top: 1.6rem; padding: 1.1rem 1.3rem; background: color-mix(in srgb, var(--gold) 14%, transparent); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; }
 
 /* ---------- Services ---------- */
@@ -315,6 +316,7 @@ p { margin: 0 0 1em; }
 .testimonials blockquote::before { content: "\201C"; font-family: var(--font-head); font-size: 4rem; color: var(--accent); opacity: .3; position: absolute; top: .2rem; left: 1rem; line-height: 1; }
 .testimonials blockquote p { font-family: var(--font-head); font-size: 1.25rem; font-style: italic; color: var(--ink); position: relative; }
 .testimonials blockquote footer { color: var(--sage-dark); font-weight: 700; font-size: .9rem; }
+.rating-stars { color: var(--gold); letter-spacing: 1px; margin-right: .4rem; }
 
 /* ---------- FAQ ---------- */
 .faq-item { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: .8rem; overflow: hidden; }
@@ -347,6 +349,8 @@ p { margin: 0 0 1em; }
 [data-theme="dark"] .field .error { color: #ef8a7c; }
 .field.invalid input, .field.invalid textarea { border-color: #c0392b; }
 .form-success { text-align: center; font-weight: 700; color: var(--sage-dark); margin-top: 1rem; }
+.form-error { text-align: center; font-weight: 600; color: #c0392b; margin-top: 1rem; }
+[data-theme="dark"] .form-error { color: #ef8a7c; }
 .form-hint { font-size: .8rem; color: var(--ink-soft); text-align: center; margin: .8rem 0 0; }
 
 /* ---------- Footer ---------- */

@@ -35,7 +35,8 @@ pour la prévisualisation intégrée.
   et lieux (`lieux`) dans `window.SAVITRI_DATA`. C'est le seul fichier à éditer
   pour mettre à jour le planning. `main.js` génère à partir de ces données : le
   tableau des horaires, les cartes de lieux et les boutons de filtre (le champ
-  `lieu` d'un cours doit correspondre à un `id` de lieu). Un guide destiné au
+  `lieu` d'un cours doit correspondre à un `id` de lieu). Chaque carte de lieu est
+  un lien `<a>` ouvrant **Google Maps** (nouvel onglet) sur `nom + adresse`. Un guide destiné au
   mainteneur non-technique est fourni dans `data/README.md`. Format `.js` (et non
   `.json`) volontaire : fonctionne aussi en ouverture `file://` sans serveur.
   Le rendu est protégé par validation + `try/catch` : en cas de données mal
@@ -91,8 +92,10 @@ pour la prévisualisation intégrée.
 - **Formulaire = Netlify Forms** : `<form name="contact" data-netlify="true"
   netlify-honeypot="bot-field">` avec champ caché `form-name` et honeypot.
   L'envoi se fait en **AJAX** (`fetch("/", POST, x-www-form-urlencoded)`) dans le
-  handler `submit` de `main.js` ; repli silencieux en local (l'endpoint n'existe
-  pas hors Netlify → on affiche quand même la confirmation).
+  handler `submit` de `main.js`. En **local** (`localhost`/`file://`) l'endpoint
+  n'existe pas → l'envoi est **simulé** (confirmation affichée). En **ligne**, un
+  échec réel n'est plus masqué : message d'erreur `#formError` + repli `mailto:`
+  vers `corinnemontigny.yoga@gmail.com` (et `console.error`).
 - ⚠️ Le `<form>` porte `name="contact"` : ne PAS lire les champs via `form.name`
   (renvoie "contact"). On lit par `id` (`#name`, `#email`, `#message`).
 - Détection Netlify : le formulaire est en HTML statique dans `index.html` (pas
@@ -118,7 +121,9 @@ pour la prévisualisation intégrée.
   menu y renvoie vers *contact*), donc texte à faire valider par la cliente.
 - **Visuels** = image de fond du hero + galerie = vraies photos reprises du site
   source (`assets/photos/`). La galerie ne retient que les photos **noir et blanc**.
-- **Témoignages** = exemples illustratifs (à remplacer par de vrais avis).
+- **Avis** = vrais avis Google (5,0/5, 4 avis ; 3 avec texte : Sylvie M., Julien F.,
+  Odile G.), récupérés via un agrégateur. Légendes de la galerie retirées (l'`alt`
+  reste pour l'accessibilité).
 - Coordonnées réelles issues du site source : `06 67 82 52 01`,
   `corinnemontigny.yoga@gmail.com`, Facebook « Savitri Yoga Saint-Malo ».
 
