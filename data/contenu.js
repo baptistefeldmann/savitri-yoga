@@ -41,7 +41,7 @@ window.SAVITRI_DATA = {
     {
       id: "benoit",
       nom: "St-Benoît-des-Ondes",
-      adresse: "Rue du bord de mer",
+      adresse: "Maison des Loisirs\n53 bis rue du Bord de Mer",
     },
     {
       id: "jouan",

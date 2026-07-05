@@ -177,7 +177,7 @@
     showDataError("Erreur de lecture de data/contenu.js : " + err.message);
   }
 
-  /* ---------- Galerie (photos noir & blanc du studio + lightbox) ----------
+  /* ---------- Galerie (photos noir & blanc des cours + lightbox) ----------
      Photos reprises du site original (galerie N&B). object-fit: cover gère
      le recadrage ; loading="lazy" diffère le chargement hors-écran. */
   const gallery = $("#gallery");
@@ -190,8 +190,8 @@
     { src: "assets/photos/galerie/nb-06.jpg", cap: "Coin méditation" },
     { src: "assets/photos/galerie/nb-07.jpg", cap: "Souffle" },
     { src: "assets/photos/galerie/nb-08.jpg", cap: "Relaxation" },
-    { src: "assets/photos/galerie/nb-09.jpg", cap: "Au studio" },
-    { src: "assets/photos/galerie/nb-10.jpg", cap: "Ambiance du studio" },
+    { src: "assets/photos/galerie/nb-09.jpg", cap: "En cours" },
+    { src: "assets/photos/galerie/nb-10.jpg", cap: "Ambiance des cours" },
     { src: "assets/photos/galerie/nb-11.jpg", cap: "Posture debout" },
     { src: "assets/photos/galerie/nb-12.jpg", cap: "Étirement" },
   ];
